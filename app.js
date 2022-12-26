@@ -4,15 +4,16 @@ import { UI } from "./models/UI.js"
 
 const renderPage = (quiz, ui) => {
 
-    if(quiz.isEnded()){
+    if (quiz.isEnded()) {
         ui.showScore(quiz.score)
     } else {
-    ui.showQuestion(quiz.getCurrentQuestion().text)
-    ui.showChoices(quiz.getCurrentQuestion().choices, (currentChoice) => {
-        quiz.validateAndContinue(currentChoice)
-
-        renderPage(quiz, ui)
-    })}
+        ui.showQuestion(quiz.getCurrentQuestion().text)
+        ui.showChoices(quiz.getCurrentQuestion().choices, (currentChoice) => {
+            quiz.validateAndContinue(currentChoice)
+            renderPage(quiz, ui)
+        })
+        ui.showProgress(quiz.questionIndex +1, questionsArray.length)
+    }
 }
 
 const main = () => {
