@@ -9,12 +9,13 @@ export class Quiz {
         return this.questions[this.questionsIndex]
     }
 
-    continue(answer) {
+    validateAndContinue(answer) {
         if (this.getCurrentQuestion().isCorrectAnswer(answer)) {
             this.score++
         }
         this.questionIndex++
     }
+
 
     isEnded(){
         return this.questions.length === this.questionIndex
