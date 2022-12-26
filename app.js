@@ -1,10 +1,6 @@
-import { data } from './data.js';
-import { Question } from './Question.js';
+import { questionsArray } from './questions.js';
 
-const questiosArray = data.map(q => new Question(q.question, q.choices, q.answer))
+const result = questionsArray[0].isCorrectAnswer("Machine Code")
 
-// const question = new Question(data[0].question, data[0].choices, data[0].answer)
+console.log(result)
 
-console.log(questiosArray)
-
-// const result = question.isCorrectAnswer('Machine Code')
