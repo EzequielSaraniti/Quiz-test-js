@@ -5,9 +5,11 @@ import { UI } from "./models/UI.js"
 const main = () => {
     const quiz = new Quiz(questionsArray)
     const ui = new UI()
+    
     console.log(quiz)
 
     ui.showQuestion(quiz.getCurrentQuestion().text)
+    ui.showChoices(quiz.getCurrentQuestion().choices)
 
 }
 
