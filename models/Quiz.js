@@ -6,7 +6,7 @@ export class Quiz {
     }
 
     getCurrentQuestion() {
-        return this.questions[this.questionsIndex]
+        return this.questions[this.questionIndex]
     }
 
     validateAndContinue(answer) {
