@@ -5,12 +5,14 @@ export class UI {
         questionTitle.innerText = text
     }
 
-    showChoices(choices){
+    showChoices(choices, callback){
         const choicesContainer = document.getElementById("choices")
         for(let i = 0; i < choices.length; i++){
             const button = document.createElement("button")
             button.innerHTML = choices[i]
             button.className = "button"
+            button.addEventListener("click", () => callback(choices[i]))
+            
 
             choicesContainer.append(button)
         }
